@@ -177,3 +177,42 @@ if __name__ == "__main__":
 (12pts) - Program will **ONLY** output the text from the search string found between the first found open parenthesis and the first found closed parentheses **following the open parenthesis** of the search string. **No other output.**
 (3pts) - Program will output a message to stderr and exit with an error status code of 1 if there is no opening parenthesis (.
 (3pts) - Program will output a message to **stderr** and exit with an error status code of ```1``` if there is no closing parenthesis ```)``` after the first found open parenthesis ```(```.
+
+
+**3) Arguments (arguments.py)**
+
+This program will support the 2 data input methods that relate to **program argument** data.
+
+If an argument option ```-f``` or ```--file``` is given, followed by an argument that is a path to a file, your program should open that file and read in the search string.
+If ```-f``` or ```--file``` is not one of the arguments, but arguments are provided (```len(args) > 0```), the argument data itself should be considered the search string by joining all of the arguments together with a space character (```" ".join(args)```).
+
+Program Setup Example:
+```
+#!/usr/bin/env
+
+import sys
+import parens
+
+def file_mode():
+    pass
+    
+def arg_mode():
+    pass
+    
+if __name__ == "__main__":
+    #argument processing
+    if "-f" in args or "--file" in args:
+        file_mode()
+    else:
+        arg_mode()
+```
+**Grading (34pts or BONUS 2pts)**
+
+(2pts) - Program has ```--version```/```-v``` argument functionality.
+(2pts) - Program has ```--help```/```-h``` argument functionality.
+(12pts) - Program ```arguments.py``` collects user input using a file found from the argument option ```-f``` or ```--file```, and if those are not found, the an argument mode is used in which all the arguments are joined together with a space character.
+(12pts) - Program will ONLY output the text from the search string found between the first found open parenthesis and the first found closed parentheses following the open parenthesis of the search string. No other output.
+(3pts) - Program will output a message to stderr and exit with an error status code of ```1``` if there is no opening parenthesis ```(```.
+(3pts) - Program will output a message to stderr and exit with an error status code of ```1``` if there is no closing parenthesis ```)``` after the first found open parenthesis ```(```.
+
+
