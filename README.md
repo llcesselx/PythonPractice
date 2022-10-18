@@ -138,6 +138,42 @@ In the programs ```arguments.py```, ```stdin.py``` or ```all.py```, if no openin
 # If no parenthetical grouping is found (meaning in_parens() returned None)
 # then display an error message to standard error, and exit with status code 1
 
-print ("Error: no parenthetical grouping found.", file=sys.stderr
-exit(1)
+    print ("Error: no parenthetical grouping found.", file=sys.stderr
+    exit(1)
 ```
+
+**2) Standard Input (```stdin.py```)**
+
+This program will support the 2 data input methods that relate to **standard input (stdin) data**.
+
+If in TTY mode (```sys.stdin.isatty()```), collect string data from stdin in TTY mode (```input()```).
+If in PIPE mode (```not sys.stdin.isatty()```), collect string data from stdin in PIPE mode (```sys.stdin.read()``` or ```for line in sys.stdin:```).
+
+Program Setup Example
+```
+#!/usr/bin/env python3
+
+import sys
+import parens
+
+def tty_mode():
+    pass
+def pipe_mode():
+    pass
+    
+if __name__ == "__main__":
+    #argument processing
+    if sys.stdin.isatty():
+        tty_mode()
+    else:
+        pipe_mode()
+````
+
+**Grading (34pts or BONUS 2pts)**
+
+(2pts) - Program has ```--version```/```-v``` argument functionality.
+(2pts) - Program has ```--help```/```-h``` argument functionality.
+(12pts) - Program ```stdin.py``` collects user input from Standard Input. There must be a TTY mode and a PIPE mode (```if sys.stdin.isatty():```).
+(12pts) - Program will **ONLY** output the text from the search string found between the first found open parenthesis and the first found closed parentheses **following the open parenthesis** of the search string. **No other output.**
+(3pts) - Program will output a message to stderr and exit with an error status code of 1 if there is no opening parenthesis (.
+(3pts) - Program will output a message to **stderr** and exit with an error status code of ```1``` if there is no closing parenthesis ```)``` after the first found open parenthesis ```(```.
