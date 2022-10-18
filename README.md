@@ -127,9 +127,9 @@ if all_passed:
 
 **Grading (20pts)**
 
-**(5pts)** - Module parens.py exists with a function in_parens defined in the global scope.
-**(5pts)** - Module parens.py makes use of if __name__ == "__main__": to run at least 1 module test of your own creation.
-**(10pts)** - Program parens.lab_tests.py passes all lab tests for the module parens.py without cheating (must actually search the string for parentheses).
+ **(5pts)** - Module parens.py exists with a function in_parens defined in the global scope.
+ **(5pts)** - Module parens.py makes use of if __name__ == "__main__": to run at least 1 module test of your own creation.
+ **(10pts)** - Program parens.lab_tests.py passes all lab tests for the module parens.py without cheating (must actually search the string for parentheses).
 
 
 **Using the Module and Getting Search Data From the User**
@@ -179,12 +179,12 @@ if __name__ == "__main__":
 
 **Grading (34pts or BONUS 2pts)**
 
-**(2pts)** - Program has ```--version```/```-v``` argument functionality.
-**(2pts)** - Program has ```--help```/```-h``` argument functionality.
-**(12pts)** - Program ```stdin.py``` collects user input from Standard Input. There must be a TTY mode and a PIPE mode (```if sys.stdin.isatty():```).
-**(12pts)** - Program will **ONLY** output the text from the search string found between the first found open parenthesis and the first found closed parentheses **following the open parenthesis** of the search string. **No other output.**
-**(3pts)** - Program will output a message to stderr and exit with an error status code of 1 if there is no opening parenthesis (.
-**(3pts)** - Program will output a message to **stderr** and exit with an error status code of ```1``` if there is no closing parenthesis ```)``` after the first found open parenthesis ```(```.
+ **(2pts)** - Program has ```--version```/```-v``` argument functionality.
+ **(2pts)** - Program has ```--help```/```-h``` argument functionality.
+ **(12pts)** - Program ```stdin.py``` collects user input from Standard Input. There must be a TTY mode and a PIPE mode (```if sys.stdin.isatty():```).
+ **(12pts)** - Program will **ONLY** output the text from the search string found between the first found open parenthesis and the first found closed parentheses **following the open parenthesis** of the search string. **No other output.**
+ **(3pts)** - Program will output a message to stderr and exit with an error status code of 1 if there is no opening parenthesis (.
+ **(3pts)** - Program will output a message to **stderr** and exit with an error status code of ```1``` if there is no closing parenthesis ```)``` after the first found open parenthesis ```(```.
 _____________________________________________________________________________
 
 **3) Arguments (arguments.py)**
@@ -217,15 +217,109 @@ if __name__ == "__main__":
 
 **Grading (34pts or BONUS 2pts)**
 
-**(2pts)** - Program has ```--version```/```-v``` argument functionality.
-**(2pts)** - Program has ```--help```/```-h``` argument functionality.
-**(12pts)** - Program ```arguments.py``` collects user input using a file found from the argument option ```-f``` or ```--file```, and if those are not found, the an argument mode is used in which all the arguments are joined together with a space character.
-**(12pts)** - Program will ONLY output the text from the search string found between the first found open parenthesis and the first found closed parentheses following the open parenthesis of the search string. No other output.
-**(3pts)** - Program will output a message to stderr and exit with an error status code of ```1``` if there is no opening parenthesis ```(```.
-**(3pts)** - Program will output a message to stderr and exit with an error status code of ```1``` if there is no closing parenthesis ```)``` after the first found open parenthesis ```(```.
+ **(2pts)** - Program has ```--version```/```-v``` argument functionality.
+ **(2pts)** - Program has ```--help```/```-h``` argument functionality.
+ **(12pts)** - Program ```arguments.py``` collects user input using a file found from the argument option ```-f``` or ```--file```, and if those are not found, the an argument mode is used in which all the arguments are joined together with a space character.
+ **(12pts)** - Program will ONLY output the text from the search string found between the first found open parenthesis and the first found closed parentheses following the open parenthesis of the search string. No other output.
+ **(3pts)** - Program will output a message to stderr and exit with an error status code of ```1``` if there is no opening parenthesis ```(```.
+ **(3pts)** - Program will output a message to stderr and exit with an error status code of ```1``` if there is no closing parenthesis ```)``` after the first found open parenthesis ```(```.
 _____________________________________________________________________________
 
 4) All Modes of Operation (all.py)
 This program is optional and only for bonus points. The idea is that all of the modes of operation used in both stdin.py and arguments.py will work in one program called all.py,
 
 A potential setup for all.py.
+```
+#!/usr/bin/env python3
+
+import sys
+import stdin
+import arguments
+
+if __name__ == "__main__":
+    #argument processing
+    if len(args) == 0:
+        if sys.stdin.isatty():
+            stdin.tty_mode()
+        else:
+            stdin.pipe_mode()
+    else:
+        if "-f" in args or "--file" in args:
+            arguments.file_mode()
+        else:
+            arguments.arg_mode()
+```
+
+**BONUS Grading (4pts)**
+ **(BONUS 2pts)** - You can complete both arguments.py and stdin.py.
+ **(BONUS 2pts)** - You complete all.py and all the input methods work.
+ _____________________________________________________________________________
+
+**Program Execution Examples**
+
+**File path provided as argument**
+File ```text.txt```
+```
+Hi, I'm Robert (Bob).
+Nice to meet you
+```
+Command (should work with ```all.py``` or ```arguments.py```)
+```
+./arguments.py --file text.txt
+```
+Expected output (stdout with exit status code 0)
+```
+Bob
+```
+_____________________________________________________________________________
+
+**File path provided as Argument - no parentheses found**
+
+File ```text.txt```
+```
+Hello
+```
+Command (should work with ```all.py``` or ```arguments.py```)
+```
+./arguments.py --file text.txt
+```
+Expected output (stderr with exit status code 1)
+```
+Error: no parenthetical grouping found.
+```
+_____________________________________________________________________________
+
+**Search String as Argument**
+
+Command (should work with ```all.py``` or ```arguments.py```)
+```
+./arguments.py Hi, I\'m Robert \(Bob\).
+```
+Expected output (stdout with exit status code 0)
+```
+Bob
+```
+_____________________________________________________________________________
+
+**Standard Input as TTY**
+
+Commmand (should work with ```all.py``` or ```stdin.py```)
+```
+./stdin.py
+```
+Program Request for User Input, Followed by User input
+```
+Enter some text with something enclosed in parentheses: Hi, I'm Robert (Bob).
+```
+Expected output (stdout with exit status code 0)
+```
+Bob
+```
+_____________________________________________________________________________
+
+**Standard Input as PIPE**
+
+Command (should work with ```all.py``` or ```stdin.py```
+```
+echo "Hi, I'm Robert (Bob)." | ./stdin.py
+```
