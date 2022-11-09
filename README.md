@@ -1,6 +1,6 @@
 # Sorting Algorithms
 
-Lab Problems (66pts)
+## Lab Problems (66pts)
 
 These lab problems are going to be created as python modules. Each module will be a standard Python 3 file in which the lab text defines specific programming constructs (variables, functions, or classes) to be be defined in the global scope of the module. A second file will be created to import these packages and provide a lab defined context in which to test them. You will want you use the package file itself for your own testing. The first problem will just be a simple demonstration of how this will work.
 
@@ -9,6 +9,36 @@ These lab problems are going to be created as python modules. Each module will b
 The following is the lab setup for a module called `foo_utils.py` and the associated lab file to test it. This first file is the module itself.
 
 ### Module Definition (`foo_utils.py`)
+```
+#!/usr/bin/env python3
+
+# Module exports are defined in the global scope of the module
+#     (left-most identation level)
+
+VERSION = "0.0.1"
+
+foo_name = "Foo"
+def foo_says(x):
+    print(f"{foo_name}: {x}")
+    
+class Foo: 
+    def __init__(self):
+        self.foo = "FOO"
+        
+# Test your code within the module here
+if __name__ == "__main__":
+    #Things defined in the scope will not be exported by the module
+    print(f'Running tests for "{__file__}" (v{VERSION}...')
+    
+    foo_says("In future modules, these tests will be defined by you!")
+    foo_name = "You"
+    foo_says("Got it!")
+    
+    f1 = Foo()
+    print(f1)
+    print(hex(id(f1)))
+    print(f1.foo)
+```
 
 This next file contains the lab defined tests that will be used to help you determine if you accomplished the task properly, and they will also be used to grade your work.
 
