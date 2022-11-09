@@ -1,27 +1,19 @@
 # Sorting Algorithms
 
-CS-201 - Programming Structures
-Fall 2022
-Instructor: Mr. Luke May
-Sorting Algorithms
-Lab Setup
-
-All of the lab assignments are turned in by simply placing the files in the appropriate directory on the CS Server. Create a directory on the CS Server to turn in your work for this assignment if you have not already:
-
-mkdir -p ~/labs/lab4
-
-Note - File and directory names in Linux are case-sensitive, so make sure your names exactly match the lab or you will get no credit.
 Lab Problems (66pts)
 
 These lab problems are going to be created as python modules. Each module will be a standard Python 3 file in which the lab text defines specific programming constructs (variables, functions, or classes) to be be defined in the global scope of the module. A second file will be created to import these packages and provide a lab defined context in which to test them. You will want you use the package file itself for your own testing. The first problem will just be a simple demonstration of how this will work.
-1) Module Setup - (foo_utils.py, foo_utils.lab_tests.py)
 
-The following is the lab setup for a module called foo_utils.py and the associated lab file to test it. This first file is the module itself.
-Module Definition (foo_utils.py)
+## 1) Module Setup - (`foo_utils.py`, `foo_utils.lab_tests.py`)
+
+The following is the lab setup for a module called `foo_utils.py` and the associated lab file to test it. This first file is the module itself.
+
+### Module Definition (`foo_utils.py`)
 
 This next file contains the lab defined tests that will be used to help you determine if you accomplished the task properly, and they will also be used to grade your work.
-Lab Defined Tests (foo_utils.lab_tests.py)
 
+### Defined Tests (`foo_utils.lab_tests.py`)
+```
 #!/usr/bin/env python3
 
 import foo_utils
@@ -31,13 +23,13 @@ foo_utils.foo_name = "LAB"
 foo_utils.foo_says(f"Testing version {foo_utils.VERSION}...")
 
 print("All lab tests PASSED!")
+```
+### Grading (6pts)
 
-Grading (6pts)
-
-    (1pts) foo_utils.py - File exists with the above code and the proper hashbang, line endings, and permissions.
-    (2pts) foo_utils.py - File contains a reasonable attempt and the code runs without errors.
-    (2pts) foo_utils.py - Correct logic / Correct implementation.
-    (1pt each - 1 total) foo_utils.lab_tests.py - Each test passes (must use the exact lab tests file from the lab).
+    1. (1pts) foo_utils.py - File exists with the above code and the proper hashbang, line endings, and permissions.
+    2. (2pts) foo_utils.py - File contains a reasonable attempt and the code runs without errors.
+    3. (2pts) foo_utils.py - Correct logic / Correct implementation.
+    4. (1pt each - 1 total) foo_utils.lab_tests.py - Each test passes (must use the exact lab tests file from the lab).
 
 2) Module - Sorting Utilities (sort_utils.py, sort_utils.lab_tests.py)
 
