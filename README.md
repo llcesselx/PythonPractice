@@ -61,16 +61,47 @@ print("All lab tests PASSED!")
     3. (2pts) foo_utils.py - Correct logic / Correct implementation.
     4. (1pt each - 1 total) foo_utils.lab_tests.py - Each test passes (must use the exact lab tests file from the lab).
 
-2) Module - Sorting Utilities (sort_utils.py, sort_utils.lab_tests.py)
 
-Create a file that will be used as a module called sort_utils.py. In this module export a module level variable called verbose, which defaults to True. Next you will export a function called swap. This function should take 3 required parameters: The first parameter should be a list, the second and third parameters should be integer index values. Use this as a template for your file:
+## 2) Module - Sorting Utilities (`sort_utils.py`, `sort_utils.lab_tests.py`)
 
-The verbose variable will allow some additional information to be printed out each time the swap function is called. When the value is set to True, information will be printed to the terminal, but when it is set to false, the function calls will not print data (unless you add print statements).
+Create a file that will be used as a module called `sort_utils.py`. In this module export a module level variable called `verbose`, which defaults to `True`. Next you will export a function called `swap`. This function should take 3 required parameters: The first parameter should be a list, the second and third parameters should be integer index values. Use this as a template for your file:
+```
+#!/usr/bin/env python3
 
-You should add testing to your code using the line if __name__ == "__main__":. I won't grade the content of your tests, only that there are some. So test this function, and make sure it is swapping values in a list.
+verbose = True
 
-Next create a lab testing file sort_utils.lab_tests.py with the following content:
+swaps = []
+def swap_tracker_reset():
+    global swaps
+    swaps = []
+    
+def swap(li, i, j):
 
+    #Track swaps
+    low = min(i, j)
+    hi = max(i, j)
+    swaps.append(((low, li[low]), (hi, li[hi])))
+    
+    # Code to print out the list, and swap indices and values
+    if verbose:
+        print(li)
+        print(f"swap {low}:{li[low]} <--> {hi}:{li[hi]}")
+        
+    # You add the code to actually swap list values here
+    
+    return
+    
+if __name__ == "__main__":
+    print(f'Running tests for "{__file__}"...')
+    
+    # You add your own tests here.
+```
+The `verbose` variable will allow some additional information to be printed out each time the swap function is called. When the value is set to `True`, information will be printed to the terminal, but when it is set to false, the function calls will not print data (unless you add print statements).
+
+You should add testing to your code using the line if `__name__ == "__main__":`. I won't grade the content of your tests, only that there are some. So test this function, and make sure it is swapping values in a list.
+
+Next create a lab testing file `sort_utils.lab_tests.py` with the following content:
+```
 #!/usr/bin/env python3
 
 import sort_utils
@@ -117,22 +148,40 @@ if tests_passed == total_tests:
     print("All lab tests PASSED!")
 else:
     print("Not all tests passed...")
+```
 
-Grading (6pts)
+### Grading (6pts)
 
-    (1pts) sort_utils.py - File exists with the above code and the proper hashbang, line endings, and permissions.
-    (1pts) sort_utils.py - File contains a reasonable attempt and the code runs without errors.
-    (2pts) sort_utils.py - Correct logic / Correct implementation.
-    (1pt each - 2 total) sort_utils.lab_tests.py - Each test passes (must use the exact lab tests file from the lab).
+    1. (1pts) `sort_utils.py` - File exists with the above code and the proper hashbang, line endings, and permissions.
+    2. (1pts) `sort_utils.py` - File contains a reasonable attempt and the code runs without errors.
+    3. (2pts) `sort_utils.py` - Correct logic / Correct implementation.
+    4. (1pt each - 2 total) `sort_utils.lab_tests.py` - Each test passes (must use the exact lab tests file from the lab).
 
-3) Selection Sort (selection.py, selection.lab_tests.py)
+## 3) Selection Sort (`selection.py`, `selection.lab_tests.py`)
 
-Create a module called selection.py. This file will be a python module that we will import into another file. In it we will be implementing the selection sort algorithm for sorting numbers from smallest to largest. Make sure you have read the lecture materials on selection sort.
+Create a module called `selection.py`. This file will be a python module that we will import into another file. In it we will be implementing the **selection sort** algorithm for sorting numbers from smallest to largest. Make sure you have read the lecture materials on selection sort.
 
-Import the package sort_utils so you will have access to your swap() function. Then define a function that will use the selection sort algorithm to sort a list. Make sure to use your swap function when you need to swap elements in the list, rather than doing it manually. Here is a template for you to begin with:
+Import the package `sort_utils` so you will have access to your `swap()` function. Then define a function that will use the selection sort algorithm to sort a list. Make sure to use your swap function when you need to swap elements in the list, rather than doing it manually. Here is a template for you to begin with:
+```
+#!/usr/bin/env python3
 
-Now create a file for the lab tests called selection.lab_tests.py. Enter the following code:
+import sort_utils
 
+def selection_sort(li):
+    # reset the list of tracked swaps to an empty list
+    sort_utils.swap_tracker_reset()
+    
+    # Add selection sort algorithm code here
+    
+    # Use your swap function somewhere in here
+    # sort_utils.swap(li, i, j)
+    
+    return
+    
+# Add tests with `if __name__ = "__main__":` code here
+```
+Now create a file for the lab tests called `selection.lab_tests.py`. Enter the following code:
+```
 #!/usr/bin/env python3
 
 import sort_utils
@@ -288,20 +337,38 @@ if tests_failed == 0:
     print("All lab tests PASSED!")
 else:
     print(f"{tests_failed} tests failed...")
+```
+### Grading (18pts)
 
-Grading (18pts)
+    1. (1pts) `selection.py` - File exists with the above code and the proper hashbang, line endings, and permissions.
+    2. (5pts) `selection.py` - File contains a reasonable attempt and the code runs without errors.
+    3. (6pts) `selection.py` - Correct logic / Correct implementation.
+    4. (1pt each - 6 total) `selection.lab_tests.py` - Each test passes (must use the exact lab tests file from the lab).
 
-    (1pts) selection.py - File exists with the above code and the proper hashbang, line endings, and permissions.
-    (5pts) selection.py - File contains a reasonable attempt and the code runs without errors.
-    (6pts) selection.py - Correct logic / Correct implementation.
-    (1pt each - 6 total) selection.lab_tests.py - Each test passes (must use the exact lab tests file from the lab).
+## 4) Insertion Sort (`insertion.py`, `insertion.lab_tests.py`)
 
-4) Insertion Sort (insertion.py, insertion.lab_tests.py)
+For this lab problem we will do the exact same thing as problem 3, except we will implement the insertion sort algorithm. Make sure you have read the lecture materials on insertion sort. Create a python module called `insertion.py`. You may use the following as a starting template:
+```
+#!/usr/bin/env python3
 
-For this lab problem we will do the exact same thing as problem 3, except we will implement the insertion sort algorithm. Make sure you have read the lecture materials on insertion sort. Create a python module called insertion.py. You may use the following as a starting template:
+import sort_utils
 
-Use the following lab tests file (insertion.lab_tests.py):
-
+def insertion_sort(li):
+    
+    #reset the list of tracked swaps to an empty list
+    sort_utils.swap_tracker_reset()
+    
+    # Add insertion sort algorithm code here
+    
+    # Use your swap function somewhere in here 
+    # sort_utils.swap(li, i, j)
+    
+    return
+    
+# Add tests with `if __name__ == "__main__":` code here
+```
+Use the following lab tests file (`insertion.lab_tests.py`):
+```
 #!/usr/bin/env python3
 
 import sort_utils
@@ -493,21 +560,22 @@ if tests_failed == 0:
     print("All lab tests PASSED!")
 else:
     print(f"{tests_failed} tests failed...")
+```
+### Grading (18pts)
 
-Grading (18pts)
+    1. (1pts) `insertion.py` - File exists with the above code and the proper hashbang, line endings, and permissions.
+    2. (5pts) `insertion.py` - File contains a reasonable attempt and the code runs without errors.
+    3. (6pts) `insertion.py` - Correct logic / Correct implementation.
+    4. (1pt each - 6 total) `insertion.lab_tests.py` - Each test passes (must use the exact lab tests file from the lab).
 
-    (1pts) insertion.py - File exists with the above code and the proper hashbang, line endings, and permissions.
-    (5pts) insertion.py - File contains a reasonable attempt and the code runs without errors.
-    (6pts) insertion.py - Correct logic / Correct implementation.
-    (1pt each - 6 total) insertion.lab_tests.py - Each test passes (must use the exact lab tests file from the lab).
-
-5) Merge Sort (merge.py, merge.lab_tests.py)
+## 5) Merge Sort (`merge.py`, `merge.lab_tests.py`)
 
 Get started on your own. Details coming soon.
-Grading (18pts)
 
-    (1pts) merge.py - File exists with the proper hashbang, line endings, and permissions.
-    (5pts) merge.py - File contains a reasonable attempt and the code runs without errors.
-    (6pts) merge.py - Correct logic / Correct implementation.
-    (1pt each - 6 total) merge.lab_tests.py - Each test passes (must use the exact lab tests file from the lab).
+### Grading (18pts)
+
+    1. (1pts) `merge.py` - File exists with the proper hashbang, line endings, and permissions.
+    2. (5pts) `merge.py` - File contains a reasonable attempt and the code runs without errors.
+    3. (6pts) `merge.py` - Correct logic / Correct implementation.
+    4. (1pt each - 6 total) `merge.lab_tests.py` - Each test passes (must use the exact lab tests file from the lab).
 
