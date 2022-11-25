@@ -36,24 +36,24 @@ if "-h" in sys.argv or "--help" in sys.argv:
     exit(0)
 
 #Permission variables
-canRead = "-r" in sys.argv or "--read" in sys.argv
-canWrite = "-w" in sys.argv or "--write" in sys.argv
-canExecute = "-x" in sys.argv or "--execute" in sys.argv
+r = "-r" in args or "--read" in args
+w = "-w" in args or "--write" in args
+x = "-x" in args or "--execute" in args
 
-if canRead and canWrite and canExecute:
-    print(7)
-elif canRead and canWrite and not canExecute:
-    print(6)
-elif canRead and canExecute and not canWrite:
-    print(5)
-elif canRead and not canWrite and not canExecute:
-    print(4)
-elif canWrite and canExecute and not canRead:
-    print(3)
-elif canWrite and not canExecute and not canRead:
-    print(2)
-elif canExecute and not canWrite and not canRead:
-    print(1)
-else:
-    print(0)
+total = 0
+
+exe = 1
+wri = 2
+rea = 4
+
+if r:
+    total += rea
+if w:
+    total += wri
+if x:
+    total += exe
+
+print(r, w, x)
+
+print(total)
 
