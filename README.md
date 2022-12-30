@@ -1,7 +1,7 @@
 # cs201
 
 
-CS-201 - Programming Structures
+<h1>CS-201 - Programming Structures</h1>
 Fall 2022
 Instructor: Mr. Luke May
 Course Tools and Python Arguments
