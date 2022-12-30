@@ -1,37 +1,13 @@
 # cs201
 
 
-<h1>CS-201 - Programming Structures</h1>
-Fall 2022
-Instructor: Mr. Luke May
-Course Tools and Python Arguments
-Preparation
-Read the tutorials from lecture material 1.
+## CS-201 - Programming Structures
+### Fall 2022
+### Instructor: Mr. Luke May
+### Course Tools and Python Arguments
+### Preparation
 
-You should be able to login to the CS Server.
-You should have run the setup script ~lmay1/Public/bin/zsh-setup
-You should be able to move files and directories between the CS Server and your local machine using an FTP Client that supports the SFTP protocol.
-Lab Setup
-For each lab you will turn in your lab files by placing them on the CS Server in a specific turn-in directory. For lab 1, the turn-in directory is ~/labs/lab1 (letter-case matters, no spaces). To create this directory, you could use the command:
-
-mkdir -p ~/labs/lab1
-Note - File and directory names in Linux are case-sensitive, so make sure your names exactly match the lab or you will get no credit. All subsequent lab directories should follow this format: no capital letters, and no spaces (e.g. ~/labs/lab2, ~/labs/lab3 etc.).
-
-If you don't have a location on your local computer to store files for this class, create one. I recommend you create a folder cs201 on your Desktop. Once you have the new folder, open Sublime. In the top menu click File then click Add Project Folder then navigate to and select that newly created folder. You should see the folder appear in a tree view on the left-hand side of Sublime. Right click on it in that tree view and select New Folder to create a folder inside of it called lab1. This is where these lab files should be placed on your local computer. Once completed, you can transfer them all over to the CS server to turn them in.
-
-Auto Grader
-There is an auto-grader for this lab that should give you a reasonable idea of your grade. It can't look at the images so if you take screenshots of the wrong things you will still lose points. This program will help to ensure that you have named your files correctly and that your programs work reasonably well. Again, the result here does not guarantee your final lab grade, but is should give a reasonable estimate of your grade.
-
-Navigate to your lab folder:
-
-cd ~/labs/lab1
-Then run the grader:
-
-cs201-lab1-grader.py
-Lab Problems (50pts)
-This lab is by far the easiest lab in the course, and it should be easy points. If you do not get an A on this lab you will very likely struggle in this course. Be sure to contact me if you have any questions.
-
-1) Sublime Editor (Preferences.sublime-settings)
+## 1) Sublime Editor (Preferences.sublime-settings)
 Follow the tutorial on Installing and Configuring Sublime Editor. Install all relevant packages and make all the changes to your settings. Once completed, you'll need to find your Sublime configuration file which should be located in your user's Home directory. To locate the file, in sublime, click the menu Preferences -> Browse Packages, and a file explorer windows should open in the Packages directory. To receive credit for this part of the lab, you will need to add the preferences specified below to your Sublime preferences file (Preferences.sublime-settings), then use an SFTP Client to copy the preferences file to the CS Server. Place it in this location on the CS Server ~/labs/lab1/Preferences.sublime-settings. You can change the settings to your own personal preference, but to get full credit you must have a least 4 different settings that are different from the defaults.
 
 Grading (10pts)
