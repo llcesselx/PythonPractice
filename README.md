@@ -10,15 +10,17 @@
 ## 1) Sublime Editor (Preferences.sublime-settings)
 Follow the tutorial on Installing and Configuring Sublime Editor. Install all relevant packages and make all the changes to your settings. Once completed, you'll need to find your Sublime configuration file which should be located in your user's Home directory. To locate the file, in sublime, click the menu Preferences -> Browse Packages, and a file explorer windows should open in the Packages directory. To receive credit for this part of the lab, you will need to add the preferences specified below to your Sublime preferences file (Preferences.sublime-settings), then use an SFTP Client to copy the preferences file to the CS Server. Place it in this location on the CS Server ~/labs/lab1/Preferences.sublime-settings. You can change the settings to your own personal preference, but to get full credit you must have a least 4 different settings that are different from the defaults.
 
-Grading (10pts)
+## Grading (10pts)
 (10pts) File ~/labs/lab1/Preferences.sublime-settings exists and shows the configuration was completed as outlined in the tutorial.
 2) Install Python 3 (python3.png)
 If you have not already, watch and follow along with the Python 3 Installation Tutorial. Make sure you follow the steps to configure Sublime and PyFlakes. Open a terminal or command line on whatever OS you use and determine the version of Python 3 you have installed.
 
-MacOS and Linux
+## MacOS and Linux
+```
 python3 --version
 Windows
 python --version
+```
 Take a screenshot of just the terminal window showing that you have the proper version of node installed, and name the file python3.png (or some other image file extension, like .jpg, or .bmp). If you take a full-screen screenshot you will lose points. You are to install this on your own machine, so screenshots from running this command on the CS Server will not be counted.
 
 Grading (10pts)
