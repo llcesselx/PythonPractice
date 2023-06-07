@@ -1,3 +1,3 @@
-# Python Practice - Labs from CS201
+# Python Practice
 
-Each branch is a seperate lab that was required for cS201 - Programming Structures
+Each branch is a small python practice problem
