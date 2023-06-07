@@ -8,7 +8,7 @@ You may assume that each input would have ***exactly* one solution,** and you ma
 You can return the answer in any order. 
 
 **Example 1:**
-```python
+```
 Input: nums = [2,7,11,15], target = 9
 Output: [0,1]
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]
