@@ -3,7 +3,7 @@ import time
 def main():
     users = []
     yorn = 'y'
-    print("Hello...")
+    print("Hello, world!")
     time.sleep(1)
     while yorn == 'y':
         user = getname()
