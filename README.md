@@ -22,8 +22,6 @@ Output: [8, 9, 9, 9, 0, 0, 0, 1]
 ```
 
 **Constraints:**
-<li>
-  <ul>The number of nodes in each linked list is in the range [1, 100].</ul>
-  <ul>`0 <= Node.val <= 9`</ul>
-  <ul>It is guaranteed that the list represents a number that does not have leading zeros.</ul>
-</li>
+  <li>The number of nodes in each linked list is in the range [1, 100].</li>
+  <li>```0 <= Node.val <= 9```</li>
+  <li>It is guaranteed that the list represents a number that does not have leading zeros.</li>
