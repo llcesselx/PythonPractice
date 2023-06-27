@@ -3,3 +3,10 @@ You are given two **non-empty** linked lists representing two non-negative integ
 
 You may assume the two numbers do not contain any leading zero, except the number 0 itself. 
 
+![linkedlist](https://github.com/llcesselx/PythonPractice/assets/108751430/c4e4a297-cdc9-478f-abbc-b3c18e0f6e0a)
+
+```
+Input: l1 = [2, 4, 3], l2 = [5, 6, 4]
+Output: [7, 0, 8]
+Explanation: 342 + 465 = 807
+```
