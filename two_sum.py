@@ -3,11 +3,14 @@ import unittest
 
 
 def twosum(nums: List[int], target: int) -> List[int]:
+    print("")
+    print("")
+    print("==============================")
     print(nums)
     ognums = nums
     result = []
     for i in nums:
-        print("==============================")
+        print("------------------------------")
         print("i in nums: {}".format(i))
         num1 = nums[0]
         print("nums[0]: {}".format(num1))
@@ -16,13 +19,18 @@ def twosum(nums: List[int], target: int) -> List[int]:
         for j in nums[1:]:
             print("j in nums: {}".format(j))
 
-            if j == num1:
+            if j == num1 and j == num2:
                 jindex = [index for index, number in enumerate(ognums) if number == num2]
                 result.append(ognums.index(num1))
-                jind = jindex[1]
-                result.append(jind)
-                print("Result found: {} and {}".format(num1, j))
-                print("Indexes found: {} and {}".format((ognums.index(num1)), jind))
+                try:
+                    jind = jindex[1]
+                    result.append(jind)
+                    print("Result found: {} and {}".format(num1, j))
+                    print("Indexes found: {} and {}".format((ognums.index(num1)), jind))
+                except:
+                    print("IndexError -> jindex[1]")
+                    print(jindex)
+
                 print(result)
                 return result
 
@@ -40,16 +48,6 @@ def twosum(nums: List[int], target: int) -> List[int]:
 
     print("No compatible values...")
     return 0
-
-
-def main():
-    numslist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    twosum(numslist, 19)
-    return 0
-
-
-if __name__ == "__main__":
-    main()
 
 
 class TestTwoSum(unittest.TestCase):
@@ -72,3 +70,12 @@ class TestTwoSum(unittest.TestCase):
         actual = twosum(nums=[2, 14, 37, 68, 104, 22, 87, 116, 265], target=109)
         expected = [5, 6]
         self.assertEqual(actual, expected)
+
+    def testtwosum5(self):
+        actual = (twosum(nums=[1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 1, 7, 1, 1, 1, 1, 1], target=11))
+        expected = [5, 11]
+        self.assertEqual(actual, expected)
+
+
+if __name__ == '__main__':
+    unittest.main()
