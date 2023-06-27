@@ -1,2 +1,5 @@
-# Roll Dice
-Program will ask how many dice to be rolled and then roll the selected die however many times the user wants. Dice are 1 - 6
+# Leetcode 2: Add Two Numbers
+You are given two **non-empty** linked lists representing two non-negative integers. The digits are stored in **reverse order**, and each of their nodes contains a single digit. Add the two numbers adn return the sum as a linked list. 
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself. 
+
