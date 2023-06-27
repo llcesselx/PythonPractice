@@ -1,4 +1,5 @@
-# Python Programming Exercises: Hello, World!
+# Python Programming Exercises # 1: Hello, World!
+## By: Al Sweigart
 Write a program that, when run, greets the user by printing "Hello, world!" on the screen. Then it prints a message on the screen asking the user to enter their name. The program greets the user by name by printing the "Hello," followed by the user's name.
 
 ```
