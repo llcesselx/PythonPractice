@@ -1,27 +1,17 @@
-# Leetcode 2: Add Two Numbers
-You are given two **non-empty** linked lists representing two non-negative integers. The digits are stored in **reverse order**, and each of their nodes contains a single digit. Add the two numbers adn return the sum as a linked list. 
+# Python Programming Exercises #5
+## By: Al Sweigart
 
-You may assume the two numbers do not contain any leading zero, except the number 0 itself. 
+Write a `fizzBuzz()` function with a single integer parameter named `upTo`. For the numbers `1` up to and including `upTo`, the function prints one of four things:
+<li>prints `'FizzBuzz'` if the number is divisble by 3 *and* 5</li>
+<li>prints `'Fizz'` if the number is only divisble by 3</li>
+<li>prints `'Buzz'` if the number is only divisble by 5</li>
+<li>prints the number if the number is *neither* divisble by 3 or 5</li>
 
-![linkedlist](https://github.com/llcesselx/PythonPractice/assets/108751430/c4e4a297-cdc9-478f-abbc-b3c18e0f6e0a)
+**Example 1:**
+```
+fizzBuzz(35)
 
-```
-Input: l1 = [2, 4, 3], l2 = [5, 6, 4]
-Output: [7, 0, 8]
-Explanation: 342 + 465 = 807
-```
-**Example 2:**
-```
-Input: l1 = [0], l2 = [0]
-Output: [0]
-```
-**Example 3:**
-```
-Input: l1 = [9, 9, 9, 9, 9, 9, 9], l2 = [9, 9, 9, 9]
-Output: [8, 9, 9, 9, 0, 0, 0, 1]
+Output:
+1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 54 Buzz
 ```
 
-**Constraints:**
-  <li>The number of nodes in each linked list is in the range [1, 100].</li>
-  <li> `0 <= Node.val <= 9` </li>
-  <li>It is guaranteed that the list represents a number that does not have leading zeros.</li>
