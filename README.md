@@ -9,6 +9,7 @@ the function prints one of four things:
 <li>prints `'Buzz'` if the number is only divisble by 5</li>
 <li>prints the number if the number is *neither* divisble by 3 or 5</li>
 
+
 **Example 1:**
 ```
 fizzBuzz(35)
