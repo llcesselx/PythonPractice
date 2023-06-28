@@ -1,27 +1,29 @@
-# Leetcode 2: Add Two Numbers
-You are given two **non-empty** linked lists representing two non-negative integers. The digits are stored in **reverse order**, and each of their nodes contains a single digit. Add the two numbers adn return the sum as a linked list. 
+# Python Programming Exercises #4: Area & Volume
+## By: Al Sweigart
+You will write four functions for this exercise. The functions `area()` and `perimeter()` have `length` and `width` parameters and the functions `volume()` and `surfaceArea()` have `length`, `width`, and `height` parameters. These functions return the area, perimeter, volume, and surface area respectively.
 
-You may assume the two numbers do not contain any leading zero, except the number 0 itself. 
+The formulas for calculating area, perimeter, volume, and surface area are based on the length(L), width(W), and height(H) of the shape:
+  <li>area = L * W</li>
+  <li>perimeter = L + W + L + W</li>
+  <li>volume = L * W * H</li>
+  <li>surface area = (L * W * 2) + (L * W * 2) + (L * W * 2)</li>
 
-![linkedlist](https://github.com/llcesselx/PythonPractice/assets/108751430/c4e4a297-cdc9-478f-abbc-b3c18e0f6e0a)
+![area volume](https://github.com/llcesselx/PythonPractice/assets/108751430/b5358af1-a39a-4695-944e-6cb6af28ee4a)
+
+
+These python `assert` statements stop the program if their condition is `False`. Copy them to the botttom of your solution program. Your solution is correct if the following `assert`statements' conditions are all `True:
 
 ```
-Input: l1 = [2, 4, 3], l2 = [5, 6, 4]
-Output: [7, 0, 8]
-Explanation: 342 + 465 = 807
+    assert area(10, 10)
+    assert area(0, 9999) == 0
+    assert area(5, 8) == 40
+    assert perimeter(10, 10) == 40
+    assert perimeter(0, 9999) == 19998
+    assert perimeter(5, 8) == 26
+    assert volume(10, 10, 10) == 1000
+    assert volume(9999, 0, 9999) == 0
+    assert volume(5, 8, 10) == 400
+    assert surface_area(10, 10, 10) == 600
+    assert surface_area(9999, 0, 9999) == 199960002
+    assert surface_area(5, 8, 10) == 340
 ```
-**Example 2:**
-```
-Input: l1 = [0], l2 = [0]
-Output: [0]
-```
-**Example 3:**
-```
-Input: l1 = [9, 9, 9, 9, 9, 9, 9], l2 = [9, 9, 9, 9]
-Output: [8, 9, 9, 9, 0, 0, 0, 1]
-```
-
-**Constraints:**
-  <li>The number of nodes in each linked list is in the range [1, 100].</li>
-  <li> `0 <= Node.val <= 9` </li>
-  <li>It is guaranteed that the list represents a number that does not have leading zeros.</li>
