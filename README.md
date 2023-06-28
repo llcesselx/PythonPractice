@@ -11,7 +11,7 @@ The formulas for calculating area, perimeter, volume, and surface area are based
 ![area volume](https://github.com/llcesselx/PythonPractice/assets/108751430/b5358af1-a39a-4695-944e-6cb6af28ee4a)
 
 
-These python `assert` statements stop the program if their condition is `False`. Copy them to the botttom of your solution program. Your solution is correct if the following `assert`statements' conditions are all `True:
+These python `assert` statements stop the program if their condition is `False`. Copy them to the botttom of your solution program. Your solution is correct if the following `assert`statements' conditions are all `True`:
 
 ```
     assert area(10, 10)
