@@ -8,7 +8,7 @@ the function prints one of four things:
 <li>prints `'Fizz'` if the number is only divisble by 3</li>
 <li>prints `'Buzz'` if the number is only divisble by 5</li>
 <li>prints the number if the number is *neither* divisble by 3 or 5</li>
-
+<br>
 
 **Example 1:**
 ```
