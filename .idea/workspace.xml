@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7359c03a-5f33-46ef-b901-7b8aedf198ad" name="Changes" comment="Python Programming Exercises #4: Area &amp; Volume">
-      <change afterPath="$PROJECT_DIR$/return_smallest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/return_smallest.py" beforeDir="false" afterPath="$PROJECT_DIR$/return_smallest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +46,25 @@
       <option name="project" value="LOCAL" />
       <updated>1687966680433</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Python Programming Exercises #4: Area &amp; Volume">
+      <created>1691777465810</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691777465810</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Python Programming Exercises #4: Area &amp; Volume">
+      <created>1691777498764</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691777498764</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="finished demo problem for GM codility assessment" />
     <MESSAGE value="Python Programming Exercises #4: Area &amp; Volume" />
     <option name="LAST_COMMIT_MESSAGE" value="Python Programming Exercises #4: Area &amp; Volume" />
   </component>
