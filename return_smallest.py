@@ -28,7 +28,20 @@ def solution(array):
 
     if small < 0:
         return 1
+    elif small > 1:
+        return 1
 
+    print("--COUNTDOWN--")
+    for i in range(small, 0, -1):
+        print("i: {}".format(i))
+        if i in array:
+            continue
+        elif i not in array:
+            if i < smallest:
+                smallest = i
+        print("smallest: {}".format(smallest))
+
+    print("--COUNT UP--")
     for i in array:
         print("i: {}".format(i))
         if i+1 in array:
@@ -36,7 +49,9 @@ def solution(array):
         elif i+1 not in array:
             if i+1 < smallest:
                 smallest = i+1
+
         print("smallest: {}".format(smallest))
+
     return smallest
 
 
@@ -62,3 +77,28 @@ class TestReturnSmallest(unittest.TestCase):
         actual = solution(array)
         expected = 1
         self.assertEqual(actual, expected)
+
+    def test4(self):
+        array = [12345, 67890, 98765, 23456, 54321, 78901]
+        actual = solution(array)
+        expected = 1
+        self.assertEqual(actual, expected)
+
+    def test5(self):
+        array = [-54321, -98765, -12345, -67890, -23456, -78901]
+        actual = solution(array)
+        expected = 1
+        self.assertEqual(actual, expected)
+
+    def test6(self):
+        array = [12345, -54321, 67890, -98765, 23456, -78901]
+        actual = solution(array)
+        expected = 1
+        self.assertEqual(actual, expected)
+
+    def test7(self):
+        array = [1000000, -1000000, 500000, -500000, 750000, -750000]
+        actual = solution(array)
+        expected = 1
+        self.assertEqual(actual, expected)
+
