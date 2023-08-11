@@ -101,3 +101,4 @@ class TestReturnSmallest(unittest.TestCase):
         actual = solution(array)
         expected = 1
         self.assertEqual(actual, expected)
+
